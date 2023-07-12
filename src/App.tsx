@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.scss';
+import {Description} from "./Description";
+
+
+export const App = () => {
+    const [isDescription, setIsDescription ] = useState(true)
+
+    return (
+        <div className="App">
+           <div className={'tabs'}>
+               <button onClick={() => setIsDescription(true)} className={isDescription ? 'active' : ''}>Description</button>
+               <button onClick={() => setIsDescription(false)} className={!isDescription ? 'active' : ''}>Implementation</button>
+           </div>
+
+            <div className={'content'}>
+                {isDescription ? <Description /> : <p>Your implementation with SVG goes here...</p>}
+            </div>
+        </div>
+    );
 }
 
 export default App;
