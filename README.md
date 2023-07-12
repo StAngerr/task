@@ -18,3 +18,7 @@ You will also see any lint errors in the console.
 
 The app has two tabs Description and Implementation.
 The description contains what you have to do and the implementation tab should contain your implementation of a task
+
+
+
+Floor plan SVG can be found here: src/assets/floor_plan.svg
