@@ -1,8 +1,6 @@
 import React, { useState} from 'react';
-
 import './App.scss';
 import {Description} from "./Description";
-
 
 export const App = () => {
     const [isDescription, setIsDescription ] = useState(true)
