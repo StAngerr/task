@@ -1,40 +1,49 @@
-import screen1 from './assets/defaultview.png'
-import screen2 from './assets/rotationScreen.png'
-import screen3 from './assets/selectOpened.png'
-import screen4 from './assets/colorSelect.png'
+import guideVideoWebm from './assets/video/demo.webm';
 
 export const Description = () => {
-    return <div>
-        <h3>Task:</h3>
-        <ul>
-            <li>Display SVG (src/assets/floor_plan1.svg) inside "Implemetation" tab</li>
-            <li>Add a "Toggle" button that <u>smoothly</u> (use animation) rotates an SVG by 180 degrees when clicked, and clicking it again should return the SVG to its original position.</li>
-            <li>Add select element. It should contain 10 randomly generated colors.
-                <ul>
-                    <li>Colors should be dynamically generated, upon initializing the component.</li>
-                    <li>Generate color using <code>getRandomHexColor()</code> which is located in <b>src/utils/colors.ts</b></li>
-                    <li>Generate labels for your generated colors using <code>hexColorToGeneralName(yourHexColor)</code> which is located in <b>src/utils/colors.ts</b></li>
-                    <li>Default first option is selected</li>
-                    <li>Option example: <code>&lt;option value="#a96845"&gt;Cooper&lt;/option&gt;</code></li>
+    return (
+        <div className="description-content">
+            <h1 className="description-title">Task Overview</h1>
+            <ul className="description-list">
+                <li className="description-item">Create a hierarchical tree structure to display locations.</li>
+                <li className="description-item">Render an SVG graphic when the last item in the location hierarchy is
+                    clicked. (Building A, Building B, Building C, Building D)
+                </li>
+                <li className="description-item">Add the following interactive features:</li>
+                <ul className="description-sublist">
+                    <li className="description-subitem">Rotate SVG 180 degrees on toggle button click.</li>
+                    <li className="description-subitem">Provide a color selector with 10 random colors. Selected color
+                        applies instantly to all locations on the SVG floor plan.
+                    </li>
+                    <li className="description-subitem">Filter SVG locations by type (circle, rectangle, star). Match
+                        each SVG item by ID to its shape type.
+                    </li>
                 </ul>
-            </li>
-            <li>Upon selecting a color from the options, all locations on the SVG floorplan should immediately update to the chosen color.
-                <ul>
-                    <li>List of SVG element IDs that require color changes: #rect1408, #rect1410, #path1529, #rect1412, #path1585.
-                        Also same list is present as constant in <b>src/constants/floorplan.ts</b> </li>
-                </ul>
-            </li>
-        </ul>
+                <li className="description-item"><b>Ensure all code is covered with unit tests.</b></li>
+                <li className="description-item">Preserve selected color, rotation, and location type filters when
+                    switching between SVGs.
+                </li>
+                <li className="description-item">Style the application according to your vision to make it look good.</li>
+            </ul>
 
-        <p>Use TypeScript and SCSS for styles</p>
-        <p>Preferable functional components and hooks</p>
-        <p>You are welcome to install any necessary tools, and you have the flexibility to modify any files, including
-            the floorplan SVG, to achieve your objectives.</p>
+            <h2 className="guide-title">Helpful Tips</h2>
+            <ul className="description-list">
+                <li className="description-item">Use SVGs from the assets folder: `floor1.svg`, `floor2.svg`,
+                    `floor3.svg`, and `floor_plan.svg`.
+                </li>
+                <li className="description-item">Refer to `data/treeData.ts` for the location hierarchy data.</li>
+                <li className="description-item">Locations in SVG are polygons with ids: rect1408', rect1410, path1529, rect1412, path1585, path15851.</li>
+                <li className="description-item">Review `utils` and `constants` for useful helpers.</li>
+                <li className="description-item">Show best practices in code, including hooks, TypeScript, and organized
+                    structure.
+                </li>
+            </ul>
 
-        <p>For additional information see screenshots:</p>
-        <img style={{width: '60%', height: 'auto', border: '2px solid #ccc' }} src={screen1} alt=""/>
-        <img style={{width: '60%', height: 'auto', border: '2px solid #ccc'}} src={screen2} alt=""/>
-        <img style={{width: '60%', height: 'auto', border: '2px solid #ccc'}} src={screen3} alt=""/>
-        <img style={{width: '60%', height: 'auto', border: '2px solid #ccc'}} src={screen4} alt=""/>
-    </div>
+            <h2 className="guide-title">Guide Video</h2>
+            <video className="guide-video" controls>
+                <source src={guideVideoWebm} type="video/webm"/>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    );
 }
