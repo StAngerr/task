@@ -39,7 +39,7 @@ export const Description = () => {
                 </li>
             </ul>
 
-            <h2 className="guide-title">Guide Video</h2>
+            <h2 className="guide-title">Demo Video</h2>
             <video className="guide-video" controls>
                 <source src={guideVideoWebm} type="video/webm"/>
                 Your browser does not support the video tag.
