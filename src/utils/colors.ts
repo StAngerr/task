@@ -1,17 +1,14 @@
 import {cssColors} from "../constants/colors";
 const nearestColor = require('nearest-color');
 
-/*No need to edit or delete this*/
 const colorMatcher = nearestColor.from(cssColors);
 
-/*No need to edit or delete this*/
 export const hexColorToGeneralName  = (hexColor: string) => {
     const nearest = colorMatcher(hexColor);
 
     return nearest.name;
 }
 
-/*No need to edit or delete this*/
 export const getRandomHexColor = () => {
     const red = Math.floor(Math.random() * 256);
     const green = Math.floor(Math.random() * 256);

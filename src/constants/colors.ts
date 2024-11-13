@@ -1,4 +1,3 @@
-/*No need to edit or delete this*/
 export const cssColors = {
     red: '#ff0000',
     green: '#008000',
